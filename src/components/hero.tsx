@@ -1,12 +1,18 @@
 import React from "react";
 import BlurFade from "./ui/blur-fade";
-import { bricolageGrotesque } from "@/app/layout";
 import Logos from "./logos";
 import { AnimatedShinyText } from "./ui/animated-shiny-text";
 import { ArrowRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import ThreeD from "./threeD";
+import { Bricolage_Grotesque } from "next/font/google";
+
+const bricolageGrotesque = Bricolage_Grotesque({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export default function Hero() {
   return (
@@ -33,8 +39,8 @@ export default function Hero() {
             innovators
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-center text-xl">
-            Building intelligent compliance frameworks while the world&apos;s most
-            ambitious companies focus on what they do best
+            Building intelligent compliance frameworks while the world&apos;s
+            most ambitious companies focus on what they do best
           </p>
           <div className="mt-8 flex place-content-center items-center gap-4">
             <button className="rounded-full bg-black px-4 py-2 text-white">
