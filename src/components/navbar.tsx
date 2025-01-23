@@ -25,13 +25,12 @@ const navLinks = [
 
 const Navbar: FC = () => {
   return (
-    <div className="max-w-6xl absolute top-2 flex w-full items-center justify-between rounded-md border bg-white bg-opacity-25 px-4 py-3 shadow-sm backdrop-blur-md backdrop-filter">
-      <h1 className="font-bold text-lg">vs-associates</h1>
+    <div className="fixed top-2 z-30 flex w-full max-w-6xl items-center justify-between rounded-md border bg-white bg-opacity-25 px-4 py-3 shadow-sm backdrop-blur-md backdrop-filter">
+      <h1 className="text-lg font-bold">vs-associates</h1>
       <div className="flex items-center gap-1">
         {navLinks.map(({ label, href }, index) => (
           <Link
             key={index}
-            target="_blank"
             href={href}
             className="group flex max-w-max items-center"
           >

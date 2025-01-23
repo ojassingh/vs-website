@@ -6,13 +6,6 @@ import { ArrowRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import ThreeD from "./threeD";
-import { Bricolage_Grotesque } from "next/font/google";
-
-const bricolageGrotesque = Bricolage_Grotesque({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 export default function Hero() {
   return (
@@ -39,9 +32,7 @@ export default function Hero() {
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </div>
-          <h1
-            className={`mt-8 text-center text-6xl font-medium ${bricolageGrotesque.className}`}
-          >
+          <h1 className={`font-heading mt-8 text-center text-6xl font-medium`}>
             Architecting <span>compliance</span> for <br /> tomorrow&apos;s
             innovators
           </h1>

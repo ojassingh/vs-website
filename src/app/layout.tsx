@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Instrument_Serif } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+
+
+const bricolageGrotesque = Bricolage_Grotesque({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
-// const instrumentSerif = Instrument_Serif(
-//   {
-//     variable: "--font-instrument-serif",
-//     subsets: ["latin"],
-//     weight: ["400"],
-//   },
-// );
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.className} antialiased`}>{children}</body>
+      <body className={`${geistSans.className} ${bricolageGrotesque.variable} antialiased`}>{children}</body>
     </html>
   );
 }
