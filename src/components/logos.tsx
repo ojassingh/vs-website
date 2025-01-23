@@ -2,7 +2,7 @@ import { FC } from "react";
 import Image from "next/image";
 import act from "@/../public/logos/act.png";
 import censhare from "@/../public/logos/censhare.png";
-import cpr from "@/../public/logos/cpr.png";
+// import cpr from "@/../public/logos/cpr.png";
 import design from "@/../public/logos/design.png";
 import egelhof from "@/../public/logos/egelhof.png";
 import itochu from "@/../public/logos/itochu.png";

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import BlurFade from "./ui/blur-fade";
+// import BlurFade from "./ui/blur-fade";
 import Link from "next/link";
 import ComesInGoesOutUnderline from "./ui/underline";
 import { ArrowUpRight } from "lucide-react";

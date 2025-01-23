@@ -1,6 +1,6 @@
 import React from "react";
 import BlurFade from "./ui/blur-fade";
-import { instrumentSerif, bricolageGrotesque } from "@/app/layout";
+import { bricolageGrotesque } from "@/app/layout";
 import Logos from "./logos";
 import { AnimatedShinyText } from "./ui/animated-shiny-text";
 import { ArrowRightIcon } from "lucide-react";
@@ -11,7 +11,7 @@ import ThreeD from "./threeD";
 export default function Hero() {
   return (
     <div className="grid h-screen place-content-center">
-      <ThreeD className="absolute -z-10 inset-0" />
+      <ThreeD className="absolute inset-0 -z-10" />
       <BlurFade inView className="">
         <div className="grid place-content-center">
           <div
@@ -29,11 +29,11 @@ export default function Hero() {
           <h1
             className={`mt-8 text-center text-6xl font-medium ${bricolageGrotesque.className}`}
           >
-            Architecting <span>compliance</span> for <br /> tomorrow's
+            Architecting <span>compliance</span> for <br /> tomorrow&apos;s
             innovators
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-center text-xl">
-            Building intelligent compliance frameworks while the world's most
+            Building intelligent compliance frameworks while the world&apos;s most
             ambitious companies focus on what they do best
           </p>
           <div className="mt-8 flex place-content-center items-center gap-4">

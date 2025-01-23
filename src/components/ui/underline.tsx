@@ -6,7 +6,6 @@ import {
   useAnimationControls,
   ValueAnimationTransition,
 } from "motion/react";
-import { Dot } from "lucide-react";
 
 interface ComesInGoesOutUnderlineProps {
   label: string;
