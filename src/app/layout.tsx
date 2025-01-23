@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Instrument_Serif } from "next/font/google";
+import { Geist } from "next/font/google";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 

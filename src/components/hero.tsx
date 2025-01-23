@@ -5,7 +5,7 @@ import { AnimatedShinyText } from "./ui/animated-shiny-text";
 import { ArrowRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import ThreeD from "./threeD";
+// import ThreeD from "./threeD";
 
 export default function Hero() {
   return (
