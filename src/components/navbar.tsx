@@ -25,7 +25,7 @@ const navLinks = [
 
 const Navbar: FC = () => {
   return (
-    <div className="fixed top-2 z-30 flex w-full max-w-6xl items-center justify-between rounded-md border bg-white bg-opacity-25 px-4 py-3 shadow-xs backdrop-blur-md backdrop-filter">
+    <div className="fixed top-2 z-30 flex w-full max-w-6xl items-center justify-between rounded-md border bg-white/25 px-4 py-3 ring-1 shadow-xs ring-black/5 backdrop-blur-sm">
       <h1 className="text-lg font-bold">vs-associates</h1>
       <div className="flex items-center gap-1">
         {navLinks.map(({ label, href }, index) => (

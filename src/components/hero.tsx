@@ -18,7 +18,7 @@ export default function Hero() {
       >
         <source src="/bg.mp4" type="video/mp4" />
       </video>
-      <BlurFade inView className="">
+      <BlurFade inView className="" direction="up">
         <div className="grid place-content-center">
           <div
             className={cn(

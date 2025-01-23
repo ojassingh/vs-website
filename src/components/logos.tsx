@@ -12,7 +12,7 @@ const logos = [act, censhare, design, egelhof, itochu, unicharm];
 
 const Logos: FC = () => {
   return (
-    <div className="mt-16 grid place-content-center gap-8">
+    <div className="mt-20 grid place-content-center gap-8">
       <h3 className="text-center">Trusted by 200+ founders and companies</h3>
       <div className="flex flex-wrap items-center justify-center gap-0">
         {logos.map((logo, index) => (

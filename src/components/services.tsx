@@ -69,7 +69,6 @@ const Services: FC = () => {
 
   return (
     <section id="services" className="relative h-screen">
-
       <div className="grid gap-4">
         <p className="max-w-max rounded-lg border px-2 py-1 text-sm">
           SERVICES
@@ -90,7 +89,7 @@ const Services: FC = () => {
         {services.map(({ title, description, icon }, index) => {
           return (
             <BlurFade key={index} inView delay={index / 10}>
-              <div className="flex flex-col gap-4 rounded-md border p-8 shadow-md">
+              <div className="z-10 flex flex-col gap-4 rounded-md border bg-white/40 p-8 ring-1 shadow-md ring-black/5 backdrop-blur-md">
                 <h3 className="flex items-center gap-2">
                   <span className="">{icon}</span>
                   {title}
@@ -109,7 +108,7 @@ const Services: FC = () => {
           );
         })}
       </div>
-      <div className="absolute size-18 bg-radial-[at_25%_25%] rounded-full from-black to-zinc-900 to-75%"></div>
+      <div className="absolute top-0 right-0 -z-10 size-80 translate-x-1/2 rounded-full bg-radial-[at_25%_25%] from-transparent to-[#438AFF] blur-lg"></div>
     </section>
   );
 };
