@@ -17,7 +17,14 @@ const bricolageGrotesque = Bricolage_Grotesque({
 export default function Hero() {
   return (
     <div className="grid h-screen place-content-center">
-      <ThreeD className="absolute inset-0 -z-10" />
+      {/* <ThreeD className="absolute inset-0 -z-10" /> */}
+      <video
+        className="absolute inset-0 -z-10 hidden h-screen w-screen sm:block"
+        autoPlay
+        muted
+      >
+        <source src="/bg.mp4" type="video/mp4" />
+      </video>
       <BlurFade inView className="">
         <div className="grid place-content-center">
           <div
