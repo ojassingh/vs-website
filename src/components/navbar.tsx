@@ -11,15 +11,15 @@ const navLinks = [
   },
   {
     label: "Team",
-    href: "/team",
+    href: "/#team",
   },
   {
     label: "Case studies",
-    href: "/case-studies",
+    href: "/#customers",
   },
   {
     label: "Blog",
-    href: "blog",
+    href: "/blog",
   },
   {
     label: "Contact",

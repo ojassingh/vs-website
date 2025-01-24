@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import grain from "@/../public/grain.jpg";
 import Services from "@/components/services";
 // import LinearCards from "@/components/linear";
+import Customers from "@/components/customers";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Services />
       {/* <LinearCards/> */}
       <Team />
+      <Customers/>
     </div>
   );
 }

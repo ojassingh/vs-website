@@ -25,7 +25,7 @@ const Team: FC = () => {
   ];
 
   return (
-    <section id="team" className="relative h-screen pt-24">
+    <section id="team" className="relative pt-24">
       <div className="grid gap-4">
         <p className="max-w-max rounded-lg border px-2 py-1 text-sm">TEAM</p>
         <div className="flex items-start justify-between">

@@ -29,10 +29,10 @@ const Logos: FC = () => {
         </div>
         <div className="absolute top-1/2 left-1/2 z-30 hidden -translate-x-1/2 -translate-y-1/2 group-hover:block">
           <Link
-            href="/customers"
+            href="/#customers"
             className="flex items-center gap-1 rounded-full border bg-white/50 px-3 py-1 shadow-sm"
           >
-            Meet our clients
+            See case studies
             <ChevronRight className="size-4" />
           </Link>
         </div>
