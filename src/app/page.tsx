@@ -1,8 +1,10 @@
 import Hero from "@/components/hero";
 // import Logos from "@/components/logos";
+import Team from "@/components/team";
 import Navbar from "@/components/navbar";
 import grain from "@/../public/grain.jpg";
 import Services from "@/components/services";
+// import LinearCards from "@/components/linear";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
+      {/* <LinearCards/> */}
+      <Team />
     </div>
   );
 }

@@ -68,7 +68,7 @@ const Services: FC = () => {
   ];
 
   return (
-    <section id="services" className="relative h-screen">
+    <section id="services" className="relative">
       <div className="grid gap-4">
         <p className="max-w-max rounded-lg border px-2 py-1 text-sm">
           SERVICES

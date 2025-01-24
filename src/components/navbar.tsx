@@ -6,12 +6,12 @@ import { ArrowUpRight } from "lucide-react";
 
 const navLinks = [
   {
-    label: "Team",
-    href: "/team",
-  },
-  {
     label: "Services",
     href: "/#services",
+  },
+  {
+    label: "Team",
+    href: "/team",
   },
   {
     label: "Case studies",
