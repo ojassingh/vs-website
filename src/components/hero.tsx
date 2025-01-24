@@ -36,15 +36,18 @@ export default function Hero() {
             Architecting <span>compliance</span> for <br /> tomorrow&apos;s
             innovators
           </h1>
-          <p className="mx-auto mt-8 max-w-xl text-center text-xl">
+          <p className="mx-auto mt-8 max-w-xl text-center text-xl text-gray-800">
             Building intelligent compliance frameworks while the world&apos;s
             most ambitious companies focus on what they do best
           </p>
           <div className="mt-8 flex place-content-center items-center gap-4">
-            <button className="rounded-full bg-black px-4 py-2 text-white">
+            <Link
+              href="/#contact"
+              className="rounded-md bg-black px-4 py-2 text-white"
+            >
               Get in touch
-            </button>
-            <button className="rounded-full border-black">Learn more</button>
+            </Link>
+            <Link href="/#services">Learn more</Link>
           </div>
         </div>
         <Logos />

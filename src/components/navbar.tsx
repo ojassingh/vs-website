@@ -6,19 +6,23 @@ import { ArrowUpRight } from "lucide-react";
 
 const navLinks = [
   {
-    label: "services",
+    label: "Team",
+    href: "/team",
+  },
+  {
+    label: "Services",
     href: "/#services",
   },
   {
-    label: "case studies",
+    label: "Case studies",
     href: "/case-studies",
   },
   {
-    label: "blog",
+    label: "Blog",
     href: "blog",
   },
   {
-    label: "contact",
+    label: "Contact",
     href: "/#contact",
   },
 ];
@@ -32,7 +36,7 @@ const Navbar: FC = () => {
           <Link
             key={index}
             href={href}
-            className="group flex max-w-max items-center"
+            className="group flex max-w-max items-center text-sm"
           >
             <ComesInGoesOutUnderline
               label={label}

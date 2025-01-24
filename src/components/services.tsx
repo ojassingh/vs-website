@@ -77,7 +77,7 @@ const Services: FC = () => {
           <h1 className={`font-heading text-5xl font-medium`}>
             Leading teams with legal <br /> expertise globally
           </h1>
-          <p className="max-w-lg text-right text-gray-500">
+          <p className="max-w-lg text-right text-gray-600">
             We guide founders and corporate leaders through the complexities of
             mergers, governance, compliance, and disputes—crafting strategies
             that align with their vision and scale with their ambitions.
