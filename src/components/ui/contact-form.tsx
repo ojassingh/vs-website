@@ -14,11 +14,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./textarea";
-import { Resend } from "resend";
 import { useState } from "react";
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import sendEmail from "./send-email";
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
@@ -44,22 +43,22 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setLoading(true);
+
     try {
-      const response = await resend.emails.send({
-        from: "onboarding@resend.dev",
-        to: "vs@vandanasingh.in",
-        subject: "Website Form Inquiry",
-        html: `<p>Name: ${values.name}</p><p>Email: ${values.email}</p><p>Phone: ${values.phone}</p><p>Message: ${values.message}</p>`,
-      });
+      await sendEmail(
+        values.name,
+        values.company,
+        values.phone || "",
+        values.email,
+        values.message,
+      );
 
       toast({
         title: "Email sent!",
         description: "We will get back to you soon!",
       });
-
       setLoading(false);
       form.reset();
-      return response;
     } catch (error) {
       setLoading(false);
       console.log(error);
