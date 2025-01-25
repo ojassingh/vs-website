@@ -60,7 +60,7 @@ function Testimonials() {
       <p className="max-w-max rounded-lg border px-2 py-1 text-sm">
         TESTIMONIALS
       </p>
-      <div className="mt-4 grid w-full grid-cols-1 overflow-hidden rounded-2xl bg-neutral-200/60 p-8 dark:bg-neutral-900">
+      <div className="mt-4 grid w-full grid-cols-1 overflow-hidden rounded-2xl bg-neutral-200/60 p-8 dark:bg-neutral-900 shadow-md">
         <div className="flex items-end justify-between">
           <div>
             <h2 className="font-heading text-4xl font-medium text-neutral-950 dark:text-neutral-50">

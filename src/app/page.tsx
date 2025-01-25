@@ -8,10 +8,12 @@ import Services from "@/components/services";
 import Customers from "@/components/customers";
 import Blog from "@/components/blog";
 import Testimonials from "@/components/testimonials";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-6xl">
+    <main className="mx-auto max-w-6xl">
       <div
         className="fixed inset-0 z-0 opacity-5"
         style={{
@@ -26,6 +28,8 @@ export default function Home() {
       <Customers />
       <Testimonials />
       <Blog />
-    </div>
+      <Contact />
+      <Footer />
+    </main>
   );
 }
