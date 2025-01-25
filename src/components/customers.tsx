@@ -31,8 +31,8 @@ const Customers: FC = () => {
   ];
 
   return (
-    <section id="customers" className="h-screen">
-      <div className="z-10 grid gap-4 pt-24">
+    <section id="customers" className="">
+      <div className="z-20 grid gap-4 pt-24">
         <p className="max-w-max rounded-lg border px-2 py-1 text-sm">
           CUSTOMERS
         </p>
