@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { EmailButton } from "./ui/email-button";
 import Link from "next/link";
-import { ArrowUpRight, Copy } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import ContactForm from "./ui/contact-form";
 
 const Contact: FC = () => {
@@ -11,7 +11,7 @@ const Contact: FC = () => {
       <div className="mt-4 flex justify-between rounded-lg bg-neutral-200/60 p-8 shadow-md backdrop-blur-sm">
         <div>
           <h1 className="font-heading text-4xl font-medium">
-            We'd love to hear from you
+            We&apos;d love to hear from you
           </h1>
           <p className="mt-4 max-w-md text-neutral-500">
             Email us or complete the form to learn how we can help you with our

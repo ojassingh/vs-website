@@ -18,6 +18,7 @@ import { Resend } from "resend";
 import { useState } from "react";
 const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 import { useToast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
@@ -71,7 +72,7 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
   }
 
   return (
-    <div className="min-w-sm">
+    <div className={cn("min-w-sm", `${className}`)}>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-2">
           <div className="flex w-full gap-2">

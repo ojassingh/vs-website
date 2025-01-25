@@ -2,7 +2,7 @@ import { FC } from "react";
 // import BlurFade from "./ui/blur-fade";
 import Link from "next/link";
 import ComesInGoesOutUnderline from "./ui/underline";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 const navLinks = [
   {
@@ -43,7 +43,7 @@ const Navbar: FC = () => {
               className="hidden sm:block"
             />
             <span className="block sm:hidden">{label}</span>
-            <ArrowUpRight className="mr-1 hidden h-4 w-4 rotate-45 opacity-0 duration-300 group-hover:ml-1 group-hover:rotate-0 group-hover:opacity-100 sm:block" />
+            <ArrowDown className="mr-1 hidden h-4 w-4 rotate-45 opacity-0 duration-300 group-hover:ml-1 group-hover:rotate-0 group-hover:opacity-100 sm:block" />
           </Link>
         ))}
       </div>
