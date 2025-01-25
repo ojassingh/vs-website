@@ -11,18 +11,23 @@ async function sendEmail(
   phone?: string,
 ) {
   try {
-    console.log("Attempting to send email");
-    const { error, data } = await resend.emails.send({
-      from: "ojas.singh02@gmail.com",
-      to: ["ojas.singh02@gmail.com"],
-      subject: "Website Form Inquiry",
-      html: `<p>Name: ${name}</p><p>Company: ${company}</p><p>Email: ${email}</p><p>Phone: ${phone ?? "Not provided"}</p><p>Message: ${message}</p>`,
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: process.env.CONTACT_KEY,
+        name: name,
+        email: email,
+        message: `Phone: ${phone}, Company: ${company}, Message: ${message}`,
+      }),
     });
-
-    if (error) {
-      console.log(error)
+    const result = await response.json();
+    if (result.success) {
+      console.log(result);
     }
-    console.log(data);
   } catch (error) {
     console.log(error);
     throw new Error("Failed to send email");
