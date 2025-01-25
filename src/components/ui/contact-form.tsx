@@ -62,6 +62,7 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
       return response;
     } catch (error) {
       setLoading(false);
+      console.log(error);
       toast({
         title: "Error",
         description: "Failed to send email",
