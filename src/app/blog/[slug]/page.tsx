@@ -1,17 +1,10 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { Dot } from "lucide-react";
-import { use } from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const metadata: Metadata = {
-  title: "Vandana Singh and Associates",
-  description: "A compliance law company based in India",
-};
-
-type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), "src/content");
@@ -50,7 +43,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     `${params.slug}.mdx`,
   );
   const fileContent = fs.readFileSync(filePath, "utf-8");
-  const { data: frontmatter, content } = matter(fileContent);
+  const { data: frontmatter } = matter(fileContent);
 
   const { default: Post } = await import(`@/content/${params.slug}.mdx`);
 
