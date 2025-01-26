@@ -9,15 +9,13 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="grid h-screen place-content-center sm:pt-10 pt-14">
+    <div className="grid h-screen place-content-center pt-14 sm:pt-10">
       {/* <ThreeD className="absolute inset-0 -z-10" /> */}
-      <video
-        className="absolute inset-0 -z-10 hidden h-screen w-screen sm:block"
-        autoPlay
-        muted
-      >
-        <source src="/bg.mp4" type="video/mp4" />
-      </video>
+      <div className="absolute inset-0 -z-10 hidden h-full w-full sm:block">
+        <video className="" autoPlay muted>
+          <source src="/bg.mp4" type="video/mp4" />
+        </video>
+      </div>
       <BlurFade inView className="" direction="up">
         <div className="grid place-content-center">
           <div
