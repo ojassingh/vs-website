@@ -7,15 +7,11 @@ const metadata: Metadata = {
   description: "A compliance law company based in India",
 };
 
-type Params = Promise<{ slug: any }>
+type Params = Promise<{ slug: string }>;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: Params };
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }) {
   const { metadata: postMetadata } = await import(
-    `@/content/${params.slug}.mdx`
+    `@/content/${(await params).slug}.mdx`
   );
 
   // Return the updated metadata
@@ -25,11 +21,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: Params }>;
-}) {
+export default async function Page({ params }: { params: Params }) {
   const { default: Post, details } = await import(
     `@/content/${(await params).slug}.mdx`
   );
