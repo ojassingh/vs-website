@@ -1,23 +1,41 @@
 import { FC } from "react";
 import Link from "next/link";
-import act from "@/../public/logos/act.png";
-import image1 from "@/../public/customers/4.jpg";
 import BlurFade from "./ui/blur-fade";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import fs from "fs";
+import path from "path";
+
+interface BlogItem {
+  name: string;
+  bg: string;
+  link: string;
+}
+
+// Fetch blog data dynamically
+const getBlogData = (): BlogItem[] => {
+  const blogDir = path.join(process.cwd(), "src/content");
+  const files = fs.readdirSync(blogDir);
+  const blogItems = files.map((file) => {
+    const { metadata, details } = require(
+      `@/content/${file.replace(/\.mdx$/, "")}`,
+    );
+
+    return {
+      name: metadata.title || "Untitled",
+      bg: details.thumbnail.src || "/default-thumbnail.jpg",
+      link: `/blog/${file.replace(/\.mdx$/, "")}`,
+    };
+  });
+
+  return blogItems;
+};
 
 const Blog: FC = () => {
-  const blogItems = [
-    {
-      name: "How we helped Aceternity scale their blockchain network",
-      bg: image1,
-      logo: act,
-      link: "https://aceternity.com",
-    },
-  ];
+  const blogItems = getBlogData();
 
   return (
-    <div className="relative px-4 pt-10 sm:px-0 sm:pt-20">
+    <div id="blog" className="relative px-4 pt-10 sm:px-0 sm:pt-20">
       <div className="absolute -top-10 right-10 -z-10 translate-x-1/2 -rotate-15 blur-sm">
         <div
           className="h-0 w-0"
@@ -31,22 +49,17 @@ const Blog: FC = () => {
       </div>
 
       <p className="max-w-max rounded-lg border px-2 py-1 text-sm">BLOG</p>
-      <h1 className="font-heading mt-4 text-3xl sm:text-4xl font-medium">
+      <h1 className="font-heading mt-4 text-3xl font-medium sm:text-4xl">
         Keep up with our latest insights
       </h1>
 
-      <div className="sm:mt-10 mt-6 flex flex-wrap justify-center sm:justify-normal gap-4">
-        {blogItems.map(({ name, bg, link, logo }, index) => {
+      <div className="mt-6 flex flex-wrap justify-center gap-4 sm:mt-10 sm:justify-normal">
+        {blogItems.map(({ name, bg, link }, index) => {
           return (
             <BlurFade key={index} inView delay={index / 10} direction="right">
               <Link href={link}>
-                <div className="group relative h-60 sm:h-84 sm:w-64 w-84 rounded-lg shadow-md">
+                <div className="group relative h-60 w-84 rounded-lg shadow-md sm:h-84 sm:w-64">
                   <div className="absolute z-20 flex flex-col gap-4 p-4">
-                    <Image
-                      src={logo}
-                      className="h-6 w-14 object-contain opacity-60 brightness-0"
-                      alt={name}
-                    />
                     <h1 className="text-lg font-medium text-neutral-700">
                       {name}
                     </h1>
@@ -58,6 +71,8 @@ const Blog: FC = () => {
                     src={bg}
                     alt={name}
                     className="absolute h-full w-full rounded-lg object-cover"
+                    width={256}
+                    height={384}
                   />
                   <div className="absolute right-4 bottom-4 rounded-full bg-black/20 p-2 backdrop-blur-sm">
                     <ArrowRight className="text-white duration-300 group-hover:-rotate-45" />

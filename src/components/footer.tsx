@@ -4,7 +4,7 @@ import { Linkedin } from "./team";
 
 const Footer: FC = () => {
   return (
-    <footer className="py-8 px-4 sm:px-0">
+    <footer className="w-full py-8 px-4 sm:px-0">
       <hr />
       <div className="flex justify-between pt-6">
         <p className="text-sm text-gray-500">

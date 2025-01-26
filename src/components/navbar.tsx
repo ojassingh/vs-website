@@ -20,7 +20,7 @@ export const navLinks = [
   },
   {
     label: "Blog",
-    href: "/blog",
+    href: "/#blog",
   },
   {
     label: "Contact",
@@ -30,10 +30,12 @@ export const navLinks = [
 
 const Navbar: FC = () => {
   return (
-    <div className="fixed top-2 left-1/2 z-30 flex w-full max-w-[calc(100%-1rem)] -translate-x-1/2 transform items-center justify-between rounded-md border bg-white/25 px-4 sm:py-3 py-1 ring-1 shadow-xs ring-black/5 backdrop-blur-sm sm:max-w-6xl">
-      <h1 className="font-heading font-medium sm:text-lg">
-        Vandana Singh & Associates
-      </h1>
+    <div className="fixed top-2 left-1/2 z-30 flex w-full max-w-[calc(100%-1rem)] -translate-x-1/2 transform items-center justify-between rounded-md border bg-white/25 px-4 py-1 ring-1 shadow-xs ring-black/5 backdrop-blur-sm sm:max-w-6xl sm:py-3">
+      <Link href="/">
+        <h1 className="font-heading font-medium sm:text-lg">
+          Vandana Singh & Associates
+        </h1>
+      </Link>
       <div className="hidden items-center gap-1 sm:flex">
         {navLinks.map(({ label, href }, index) => (
           <Link
