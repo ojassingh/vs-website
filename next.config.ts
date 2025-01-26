@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createMDX from '@next/mdx'
+import remarkFrontmatter from 'remark-frontmatter'
 
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
@@ -14,12 +15,20 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "assets.aceternity.com",
       },
+      {
+        protocol: "https",
+        hostname: "github.com",
+      },
     ],
   },
 };
 
 const withMDX = createMDX({
-  // Add markdown plugins here, as desired
+  options: {
+    remarkPlugins: [remarkFrontmatter], // Add this plugin
+    rehypePlugins: [],
+  },
 })
+
 
 export default withMDX(nextConfig);

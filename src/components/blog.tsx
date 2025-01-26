@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
 
 interface BlogItem {
   name: string;
@@ -12,25 +13,21 @@ interface BlogItem {
   link: string;
 }
 
-// Fetch blog data dynamically
 const getBlogData = async (): Promise<BlogItem[]> => {
-  // Path to the directory containing MDX files
   const blogDir = path.join(process.cwd(), "src/content");
-
-  // Read all MDX files in the directory
   const files = fs.readdirSync(blogDir);
 
-  // Process each file to extract metadata and details
   const blogItems = await Promise.all(
     files.map(async (file) => {
-      // Dynamically import the MDX file
-      const { metadata, details } = await import(
-        `@/content/${file.replace(/\.mdx$/, "")}`
-      );
+      const filePath = path.join(blogDir, file);
+      const fileContent = fs.readFileSync(filePath, "utf-8");
+
+      // Parse frontmatter using gray-matter
+      const { data: frontmatter } = matter(fileContent);
 
       return {
-        name: metadata.title || "Untitled",
-        bg: details.thumbnail.src || "/default-thumbnail.jpg", // Use the thumbnail from details
+        name: frontmatter.title || "Untitled", // Use frontmatter.title or fallback
+        bg: frontmatter.thumbnail || "/default-thumbnail.jpg", // Use the thumbnail from frontmatter
         link: `/blog/${file.replace(/\.mdx$/, "")}`, // Generate link from filename
       };
     }),
