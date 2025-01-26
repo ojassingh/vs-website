@@ -7,25 +7,24 @@ const metadata: Metadata = {
   description: "A compliance law company based in India",
 };
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const { metadata: postMetadata } = await import(
-    `@/content/${params.slug}.mdx`
-  );
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { slug: string };
+// }): Promise<Metadata> {
+//   const { metadata: postMetadata } = await import(
+//     `@/content/${params.slug}.mdx`
+//   );
 
-  // Return the updated metadata
-  return {
-    title: postMetadata.title || metadata.title, // Use MDX title or fallback
-    description: postMetadata.description || metadata.description, // Use MDX description or fallback
-  };
-}
+//   // Return the updated metadata
+//   return {
+//     title: postMetadata.title || metadata.title, // Use MDX title or fallback
+//     description: postMetadata.description || metadata.description, // Use MDX description or fallback
+//   };
+// }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
-  const { default: Post, details } = await import(`@/content/${slug}.mdx`);
+  const { default: Post, details } = await import(`@/content/${params.slug}.mdx`);
 
   return (
     <div className="">
