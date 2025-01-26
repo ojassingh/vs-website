@@ -5,7 +5,6 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), "src/content");
   const files = fs.readdirSync(postsDir);
@@ -13,39 +12,40 @@ export async function generateStaticParams() {
     slug: file.replace(/\.mdx$/, ""),
   }));
 }
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const params = await props.params;
   const filePath = path.join(
     process.cwd(),
     "src/content",
-    `${params.slug}.mdx`,
+    `${params.slug}.mdx`
   );
   const fileContent = fs.readFileSync(filePath, "utf-8");
-
-  // Parse frontmatter using gray-matter
   const { data: frontmatter } = matter(fileContent);
 
-  // Return the updated metadata
   return {
-    title: frontmatter.title || "Untitled", // Use frontmatter.title or fallback
-    description:
-      frontmatter.description || "A compliance law company based in India", // Use frontmatter.description or fallback
+    title: frontmatter.title || "Untitled",
+    description: frontmatter.description || "A compliance law company based in India",
   };
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const params = await props.params;
   const filePath = path.join(
     process.cwd(),
     "src/content",
-    `${params.slug}.mdx`,
+    `${params.slug}.mdx`
   );
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data: frontmatter } = matter(fileContent);
 
-  const { default: Post } = await import(`@/content/${params.slug}.mdx`);
+  const { default: Post } = await import(
+    `@/content/${params.slug}.mdx`
+  );
 
   return (
     <div className="">
@@ -58,7 +58,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <h1 className="font-heading text-3xl sm:text-5xl">
           {frontmatter.title}
         </h1>
-        {/* <h3>{details.description}</h3> */}
         <div className="flex items-center gap-2">
           <Image
             alt={frontmatter.author}
