@@ -12,7 +12,6 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  // Import the MDX file and extract its metadata
   const { metadata: postMetadata } = await import(
     `@/content/${params.slug}.mdx`
   );
@@ -24,16 +23,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const slug = (await params).slug;
-  const {
-    default: Post,
-    details,
-  } = await import(`@/content/${slug}.mdx`);
+export default async function Page({ params }: { params: { slug: string } }) {
+  const slug = params.slug;
+  const { default: Post, details } = await import(`@/content/${slug}.mdx`);
 
   return (
     <div className="">
