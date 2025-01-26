@@ -13,9 +13,9 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-6xl">
+    <main className="mx-auto max-w-6xl overflow-x-hidden">
       <div
-        className="fixed inset-0 z-0 opacity-5"
+        className="fixed inset-0 z-0 opacity-5 h-screen w-screen"
         style={{
           backgroundImage: `url(${grain.src})`,
         }}

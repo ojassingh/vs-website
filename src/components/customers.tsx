@@ -31,16 +31,16 @@ const Customers: FC = () => {
   ];
 
   return (
-    <section id="customers" className="">
-      <div className="z-20 grid gap-4 pt-24">
+    <section id="customers" className="px-4 sm:px-0">
+      <div className="z-20 grid gap-4 sm:pt-24 pt-10">
         <p className="max-w-max rounded-lg border px-2 py-1 text-sm">
           CUSTOMERS
         </p>
-        <div className="flex items-start justify-between">
-          <h1 className={`font-heading text-5xl font-medium`}>
+        <div className="sm:flex items-start justify-between">
+          <h1 className={`font-heading text-3xl sm:text-5xl font-medium`}>
             Case studies from two decades of experience
           </h1>
-          <p className="max-w-lg text-right text-gray-600">
+          <p className="max-w-lg text-left sm:text-right text-gray-600">
             We&apos;ve partnered with leaders to navigate their most critical
             legal and compliance challenges—delivering solutions that drive
             growth, ensure resilience, and build trust. Read our case studies to
@@ -48,12 +48,12 @@ const Customers: FC = () => {
           </p>
         </div>
       </div>
-      <div className="mt-10 flex flex-wrap gap-4">
+      <div className="sm:mt-10 mt-6 flex flex-wrap justify-center sm:justify-normal gap-4">
         {customers.map(({ name, bg, link, logo }, index) => {
           return (
             <BlurFade key={index} inView delay={index / 10} direction="right">
               <Link href={link}>
-                <div className="group relative h-84 w-64 rounded-lg shadow-md">
+                <div className="group relative h-60 sm:h-84 sm:w-64 w-84 rounded-lg shadow-md">
                   <div className="absolute z-20 flex flex-col gap-4 p-4">
                     <Image
                       src={logo}

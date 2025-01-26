@@ -17,13 +17,13 @@ const Logos: FC = () => {
     <div className="mt-20 grid place-content-center gap-8">
       <h3 className="text-center">Trusted by 200+ founders and companies</h3>
       <div className="group relative">
-        <div className="z-10 flex flex-wrap items-center justify-center gap-0 duration-200 group-hover:blur-sm">
+        <div className="z-10 flex flex-wrap items-center justify-center gap-4 sm:gap-0 duration-200 group-hover:blur-sm">
           {logos.map((logo, index) => (
             <Image
               key={index}
               src={logo}
               alt="logo"
-              className="h-10 w-32 object-contain opacity-50 brightness-0"
+              className=" sm:h-10 h-6 w-28 sm:w-32 object-contain opacity-50 brightness-0"
             />
           ))}
         </div>

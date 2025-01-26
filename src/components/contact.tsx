@@ -6,11 +6,11 @@ import ContactForm from "./ui/contact-form";
 
 const Contact: FC = () => {
   return (
-    <div id="contact" className="pt-20">
+    <div id="contact" className="sm:pt-20 pt-10 px-4 sm:px-0">
       <p className="max-w-max rounded-lg border px-2 py-1 text-sm">CONTACT</p>
-      <div className="mt-4 flex justify-between rounded-lg bg-neutral-200/60 p-8 shadow-md backdrop-blur-sm">
+      <div className="mt-4 sm:flex justify-between rounded-lg bg-neutral-200/60 sm:p-8 p-4 shadow-md backdrop-blur-sm">
         <div>
-          <h1 className="font-heading text-4xl font-medium">
+          <h1 className="font-heading text-3xl sm:text-4xl font-medium">
             We&apos;d love to hear from you
           </h1>
           <p className="mt-4 max-w-md text-neutral-500">
@@ -28,7 +28,7 @@ const Contact: FC = () => {
               <ArrowUpRight className="mr-1 size-4 rotate-45 opacity-0 duration-300 group-hover:ml-1 group-hover:rotate-0 group-hover:opacity-100" />
             </p>
           </Link>
-          <div className="mt-10 flex max-w-lg gap-4">
+          <div className="sm:mt-10 mt-6 grid sm:flex max-w-lg gap-4">
             <div className="">
               <h3 className="text-gray-800">Client Support</h3>
               <p className="text-sm text-gray-500">
@@ -44,7 +44,7 @@ const Contact: FC = () => {
             </div>
           </div>
         </div>
-        <ContactForm className="" />
+        <ContactForm className="sm:mt-0 mt-4" />
       </div>
     </div>
   );

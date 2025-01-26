@@ -25,42 +25,54 @@ const Team: FC = () => {
   ];
 
   return (
-    <section id="team" className="relative pt-24">
+    <section id="team" className="relative px-4 pt-10 sm:px-0 sm:pt-24">
       <div className="grid gap-4">
         <p className="max-w-max rounded-lg border px-2 py-1 text-sm">TEAM</p>
-        <div className="flex items-start justify-between">
-          <h1 className={`font-heading text-5xl font-medium`}>
+        <div className="grid items-start justify-between sm:flex">
+          <h1 className={`font-heading text-3xl font-medium sm:text-5xl`}>
             Advisors redifining <br /> compliance excellence
           </h1>
-          <p className="max-w-lg text-right text-gray-600">
-            We are a team of seasoned legal professionals, united by <br /> a
-            shared commitment to delivering innovative solutions <br /> and
+          <p className="mt-2 max-w-lg text-left text-gray-600 sm:mt-0 sm:text-right">
+            We are a team of seasoned legal professionals, united by{" "}
+            <br className="hidden sm:block" /> a shared commitment to delivering
+            innovative solutions <br className="hidden sm:block" /> and
             unparalleled client success.
           </p>
         </div>
       </div>
 
-      <div className="mt-16 grid grid-cols-2 items-center gap-4">
+      <div className="mt-8 grid grid-cols-1 items-center gap-4 sm:mt-16 sm:grid-cols-2">
         {team.map(({ name, role, description, image, linkedin }, index) => {
           return (
             <BlurFade key={index} inView delay={index / 10}>
-              <div className="flex rounded-md ring-1 ring-black/5">
+              <div className="relative rounded-md ring-1 ring-black/5 sm:flex">
                 <Image
                   alt="Vandana Singh & associates founder - Vandana Singh"
                   src={image}
-                  className="w-48 rounded-l-md object-cover"
+                  className="hidden w-48 rounded-l-md object-cover sm:block"
                 />
 
-                <div className="rounded-r-md bg-white/50 px-4 py-2 shadow-sm backdrop-blur-sm">
-                  <div className="flex justify-between">
-                    <h3>{name}</h3>{" "}
-                    <Link href={linkedin} target="_blank" className="">
-                      <Linkedin />
-                    </Link>
+                <div className="rounded-md bg-white/50 px-4 py-2 shadow-sm backdrop-blur-sm sm:rounded-r-md">
+                  <div className="flex items-center gap-2">
+                    <Image
+                      alt="Vandana Singh & associates founder - Vandana Singh"
+                      src={image}
+                      className="h-10 w-10 rounded-full object-cover sm:hidden"
+                    />
+                    <div>
+                      <h3>{name}</h3>
+                      <p className="text-gray-800">{role}</p>
+                    </div>
                   </div>
-                  <p className="text-gray-800">{role}</p>
                   <p className="mt-2 text-sm text-gray-600">{description}</p>
                 </div>
+                <Link
+                  href={linkedin}
+                  target="_blank"
+                  className="absolute top-2 right-2"
+                >
+                  <Linkedin />
+                </Link>
               </div>
             </BlurFade>
           );

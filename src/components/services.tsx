@@ -68,16 +68,16 @@ const Services: FC = () => {
   ];
 
   return (
-    <section id="services" className="relative">
+    <section id="services" className="relative px-4 sm:px-0">
       <div className="grid gap-4">
         <p className="max-w-max rounded-lg border px-2 py-1 text-sm">
           SERVICES
         </p>
-        <div className="flex items-start justify-between">
-          <h1 className={`font-heading text-5xl font-medium`}>
+        <div className="sm:flex items-start justify-between">
+          <h1 className={`font-heading text-3xl sm:text-5xl font-medium`}>
             Leading teams with legal <br /> expertise globally
           </h1>
-          <p className="max-w-lg text-right text-gray-600">
+          <p className="max-w-lg text-left mt-2 sm:mt-0 sm:text-right text-gray-600">
             We guide founders and corporate leaders through the complexities of
             mergers, governance, compliance, and disputes—crafting strategies
             that align with their vision and scale with their ambitions.
@@ -85,11 +85,11 @@ const Services: FC = () => {
         </div>
       </div>
 
-      <div className="mt-20 grid grid-cols-3 gap-4">
+      <div className="sm:mt-20 mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
         {services.map(({ title, description, icon }, index) => {
           return (
             <BlurFade key={index} inView delay={index / 10}>
-              <div className="z-10 flex flex-col gap-4 rounded-md border bg-white/40 p-8 ring-1 shadow-md ring-black/5 backdrop-blur-md">
+              <div className="z-10 flex flex-col gap-4 rounded-md border bg-white/40 sm:px-8 sm:py-8 px-8 py-4 ring-1 shadow-md ring-black/5 backdrop-blur-md">
                 <h3 className="flex items-center gap-2">
                   <span className="">{icon}</span>
                   {title}

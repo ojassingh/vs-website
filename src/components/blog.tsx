@@ -17,7 +17,7 @@ const Blog: FC = () => {
   ];
 
   return (
-    <div className="relative pt-20">
+    <div className="relative px-4 pt-10 sm:px-0 sm:pt-20">
       <div className="absolute -top-10 right-10 -z-10 translate-x-1/2 -rotate-15 blur-sm">
         <div
           className="h-0 w-0"
@@ -31,16 +31,16 @@ const Blog: FC = () => {
       </div>
 
       <p className="max-w-max rounded-lg border px-2 py-1 text-sm">BLOG</p>
-      <h1 className="font-heading mt-4 text-4xl font-medium">
+      <h1 className="font-heading mt-4 text-3xl sm:text-4xl font-medium">
         Keep up with our latest insights
       </h1>
 
-      <div className="mt-10 flex flex-wrap gap-4">
+      <div className="sm:mt-10 mt-6 flex flex-wrap justify-center sm:justify-normal gap-4">
         {blogItems.map(({ name, bg, link, logo }, index) => {
           return (
             <BlurFade key={index} inView delay={index / 10} direction="right">
               <Link href={link}>
-                <div className="group relative h-84 w-64 rounded-lg shadow-md">
+                <div className="group relative h-60 sm:h-84 sm:w-64 w-84 rounded-lg shadow-md">
                   <div className="absolute z-20 flex flex-col gap-4 p-4">
                     <Image
                       src={logo}

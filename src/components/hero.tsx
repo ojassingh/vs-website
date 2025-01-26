@@ -32,11 +32,13 @@ export default function Hero() {
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </div>
-          <h1 className={`font-heading mt-8 text-center text-6xl font-medium`}>
+          <h1
+            className={`font-heading mt-8 px-2 text-center text-4xl font-medium sm:px-0 sm:text-6xl`}
+          >
             Architecting <span>compliance</span> for <br /> tomorrow&apos;s
             innovators
           </h1>
-          <p className="mx-auto mt-8 max-w-xl text-center text-xl text-gray-800">
+          <p className="mx-auto mt-8 max-w-xs text-center text-base text-gray-800 sm:max-w-xl sm:text-xl">
             Building intelligent compliance frameworks while the world&apos;s
             most ambitious companies focus on what they do best
           </p>

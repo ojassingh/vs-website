@@ -56,14 +56,14 @@ function Testimonials() {
   }
 
   return (
-    <div className="w-full pt-20">
+    <div className="w-full px-4 pt-10 sm:px-0 sm:pt-20">
       <p className="max-w-max rounded-lg border px-2 py-1 text-sm">
         TESTIMONIALS
       </p>
-      <div className="mt-4 grid w-full grid-cols-1 overflow-hidden rounded-2xl bg-neutral-200/60 p-8 dark:bg-neutral-900 shadow-md">
+      <div className="mt-4 grid w-full grid-cols-1 overflow-hidden rounded-2xl bg-neutral-200/60 px-4 py-4 shadow-md sm:px-8 sm:py-8 dark:bg-neutral-900">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="font-heading text-4xl font-medium text-neutral-950 dark:text-neutral-50">
+            <h2 className="font-heading text-2xl font-medium text-neutral-950 sm:text-4xl dark:text-neutral-50">
               Because what they say matters.
             </h2>
             <p className="mt-2 text-neutral-500">
@@ -96,7 +96,7 @@ function Testimonials() {
                 {index >= currentSlide && (
                   <motion.div
                     animate={{ opacity: 1, x: 0, scale: 1 }}
-                    className="flex h-60 w-[24rem] flex-col justify-between rounded-lg bg-white p-4 shadow-sm dark:bg-neutral-800"
+                    className="flex h-60 w-[20rem] sm:w-[24rem] flex-col justify-between rounded-lg bg-white p-4 shadow-sm dark:bg-neutral-800"
                     exit={{ opacity: 0, x: 0, scale: 0.8, rotate: 3 }}
                     initial={{ opacity: 0, x: 0, scale: 0.8 }}
                     layout={true}

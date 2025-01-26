@@ -72,10 +72,10 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
   }
 
   return (
-    <div className={cn("min-w-sm", `${className}`)}>
+    <div className={cn("sm:min-w-sm", `${className}`)}>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-2">
-          <div className="flex w-full gap-2">
+          <div className="grid sm:flex w-full gap-2">
             <FormField
               control={form.control}
               name="name"
@@ -111,7 +111,7 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
               )}
             />
           </div>
-          <div className="flex w-full gap-2">
+          <div className="grid sm:flex w-full gap-2">
             <FormField
               control={form.control}
               name="email"
