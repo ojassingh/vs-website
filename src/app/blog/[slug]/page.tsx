@@ -7,7 +7,7 @@ const metadata: Metadata = {
   description: "A compliance law company based in India",
 };
 
-type Params = Promise<any>;
+type Params = Promise<{ slug: string }>
 
 export async function generateMetadata({
   params,
