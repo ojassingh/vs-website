@@ -13,26 +13,34 @@ interface BlogItem {
 }
 
 // Fetch blog data dynamically
-const getBlogData = (): BlogItem[] => {
+const getBlogData = async (): Promise<BlogItem[]> => {
+  // Path to the directory containing MDX files
   const blogDir = path.join(process.cwd(), "src/content");
-  const files = fs.readdirSync(blogDir);
-  const blogItems = files.map((file) => {
-    const { metadata, details } = require(
-      `@/content/${file.replace(/\.mdx$/, "")}`,
-    );
 
-    return {
-      name: metadata.title || "Untitled",
-      bg: details.thumbnail.src || "/default-thumbnail.jpg",
-      link: `/blog/${file.replace(/\.mdx$/, "")}`,
-    };
-  });
+  // Read all MDX files in the directory
+  const files = fs.readdirSync(blogDir);
+
+  // Process each file to extract metadata and details
+  const blogItems = await Promise.all(
+    files.map(async (file) => {
+      // Dynamically import the MDX file
+      const { metadata, details } = await import(
+        `@/content/${file.replace(/\.mdx$/, "")}`
+      );
+
+      return {
+        name: metadata.title || "Untitled",
+        bg: details.thumbnail.src || "/default-thumbnail.jpg", // Use the thumbnail from details
+        link: `/blog/${file.replace(/\.mdx$/, "")}`, // Generate link from filename
+      };
+    }),
+  );
 
   return blogItems;
 };
 
-const Blog: FC = () => {
-  const blogItems = getBlogData();
+const Blog: FC = async () => {
+  const blogItems = await getBlogData();
 
   return (
     <div id="blog" className="relative px-4 pt-10 sm:px-0 sm:pt-20">
