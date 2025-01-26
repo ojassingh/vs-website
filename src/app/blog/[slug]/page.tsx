@@ -2,10 +2,10 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Dot } from "lucide-react";
 
-const metadata: Metadata = {
-  title: "Vandana Singh and Associates",
-  description: "A compliance law company based in India",
-};
+// const metadata: Metadata = {
+//   title: "Vandana Singh and Associates",
+//   description: "A compliance law company based in India",
+// };
 
 // export async function generateMetadata({
 //   params,
