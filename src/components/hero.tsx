@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="grid h-screen place-content-center">
+    <div className="grid h-screen place-content-center sm:pt-0 pt-14">
       {/* <ThreeD className="absolute inset-0 -z-10" /> */}
       <video
         className="absolute inset-0 -z-10 hidden h-screen w-screen sm:block"

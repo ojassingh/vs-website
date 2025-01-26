@@ -45,14 +45,14 @@ const Team: FC = () => {
         {team.map(({ name, role, description, image, linkedin }, index) => {
           return (
             <BlurFade key={index} inView delay={index / 10}>
-              <div className="relative rounded-md ring-1 ring-black/5 sm:flex">
+              <div className="relative rounded-md ring-black/5 sm:flex sm:ring-1">
                 <Image
                   alt="Vandana Singh & associates founder - Vandana Singh"
                   src={image}
                   className="hidden w-48 rounded-l-md object-cover sm:block"
                 />
 
-                <div className="rounded-md bg-white/50 px-4 py-2 shadow-sm backdrop-blur-sm sm:rounded-r-md">
+                <div className="rounded-md bg-white/70 px-4 py-2 shadow-sm backdrop-blur-sm sm:rounded-r-md sm:bg-white/50">
                   <div className="flex items-center gap-2">
                     <Image
                       alt="Vandana Singh & associates founder - Vandana Singh"
