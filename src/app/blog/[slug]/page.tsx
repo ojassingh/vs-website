@@ -1,30 +1,39 @@
 import Image from "next/image";
-// import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Dot } from "lucide-react";
 
-// const metadata: Metadata = {
-//   title: "Vandana Singh and Associates",
-//   description: "A compliance law company based in India",
-// };
+const metadata: Metadata = {
+  title: "Vandana Singh and Associates",
+  description: "A compliance law company based in India",
+};
 
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: { slug: string };
-// }): Promise<Metadata> {
-//   const { metadata: postMetadata } = await import(
-//     `@/content/${params.slug}.mdx`
-//   );
+type Params = Promise<{ slug: string[] }>;
 
-//   // Return the updated metadata
-//   return {
-//     title: postMetadata.title || metadata.title, // Use MDX title or fallback
-//     description: postMetadata.description || metadata.description, // Use MDX description or fallback
-//   };
-// }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { default: Post, details } = await import(`@/content/${params.slug}.mdx`);
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: Params };
+}): Promise<Metadata> {
+  const { metadata: postMetadata } = await import(
+    `@/content/${params.slug}.mdx`
+  );
+
+  // Return the updated metadata
+  return {
+    title: postMetadata.title || metadata.title, // Use MDX title or fallback
+    description: postMetadata.description || metadata.description, // Use MDX description or fallback
+  };
+}
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: Params }>;
+}) {
+  const { default: Post, details } = await import(
+    `@/content/${(await params).slug}.mdx`
+  );
 
   return (
     <div className="">
