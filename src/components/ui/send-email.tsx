@@ -1,5 +1,4 @@
 "use server";
-import { Resend } from "resend";
 
 async function sendEmail(
   name: string,

@@ -2,7 +2,7 @@ import { FC } from "react";
 // import BlurFade from "./ui/blur-fade";
 import Link from "next/link";
 import ComesInGoesOutUnderline from "./ui/underline";
-import { ArrowDown, Ham } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import HamburgerMenu from "./ui/hamburger-menu";
 
 export const navLinks = [
@@ -51,7 +51,6 @@ const Navbar: FC = () => {
         ))}
       </div>
       <HamburgerMenu />
-      {/* <Ham /> */}
     </div>
   );
 };
