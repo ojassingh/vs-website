@@ -4,6 +4,7 @@ import { Dot } from "lucide-react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Head from "next/head";
 
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), "src/content");
@@ -20,14 +21,15 @@ export async function generateMetadata(props: {
   const filePath = path.join(
     process.cwd(),
     "src/content",
-    `${params.slug}.mdx`
+    `${params.slug}.mdx`,
   );
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data: frontmatter } = matter(fileContent);
 
   return {
     title: frontmatter.title || "Untitled",
-    description: frontmatter.description || "A compliance law company based in India",
+    description:
+      frontmatter.description || "A compliance law company based in India",
   };
 }
 
@@ -38,17 +40,19 @@ export default async function Page(props: {
   const filePath = path.join(
     process.cwd(),
     "src/content",
-    `${params.slug}.mdx`
+    `${params.slug}.mdx`,
   );
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data: frontmatter } = matter(fileContent);
 
-  const { default: Post } = await import(
-    `@/content/${params.slug}.mdx`
-  );
+  const { default: Post } = await import(`@/content/${params.slug}.mdx`);
 
   return (
     <div className="">
+      <Head>{frontmatter.title} | Vandana Singh & Associates
+        <meta name="description" content={frontmatter.description} />
+        
+      </Head>
       <article className="grid gap-6">
         <ul className="flex gap-2">
           <p>{frontmatter.date}</p>
