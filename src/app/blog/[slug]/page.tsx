@@ -49,9 +49,9 @@ export default async function Page(props: {
 
   return (
     <div className="">
-      <Head>{frontmatter.title} | Vandana Singh & Associates
+      <Head>
+        <title>{frontmatter.title} | Vandana Singh & Associates</title>
         <meta name="description" content={frontmatter.description} />
-        
       </Head>
       <article className="grid gap-6">
         <ul className="flex gap-2">
