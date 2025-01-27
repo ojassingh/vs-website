@@ -14,10 +14,10 @@ export const navLinks = [
     label: "Team",
     href: "/#team",
   },
-  {
-    label: "Case studies",
-    href: "/#customers",
-  },
+  // {
+  //   label: "Case studies",
+  //   href: "/#customers",
+  // },
   {
     label: "Blog",
     href: "/#blog",

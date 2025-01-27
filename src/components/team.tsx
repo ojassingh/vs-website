@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FC } from "react";
-import headshot from "@/../public/headshot.jpeg";
+import headshot from "@/../public/headshot.jpg";
+import sweta from "@/../public/sweta.jpeg";
 import Link from "next/link";
 import BlurFade from "./ui/blur-fade";
 
@@ -19,7 +20,7 @@ const Team: FC = () => {
       role: "Partner and HR Specialist",
       description:
         "With 8+ years in HR, Sweta specializes in talent management, employee engagement, and strategic HR initiatives. She has been instrumental in building high-performance teams and fostering a culture of continuous improvement.",
-      image: headshot,
+      image: sweta,
       linkedin: "https://www.linkedin.com/in/sweta-dutta-47765a55/",
     },
   ];
@@ -49,8 +50,10 @@ const Team: FC = () => {
                 <Image
                   alt="Vandana Singh & associates founder - Vandana Singh"
                   src={image}
-                  className="hidden w-48 rounded-l-md object-cover sm:block"
+                  className="hidden h-64
+                   w-56 rounded-l-md object-cover sm:block"
                 />
+
 
                 <div className="rounded-md bg-white/70 px-4 py-2 shadow-sm backdrop-blur-sm sm:rounded-r-md sm:bg-white/50">
                   <div className="flex items-center gap-2">

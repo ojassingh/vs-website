@@ -25,7 +25,7 @@ export default function Home() {
       <Services />
       {/* <LinearCards/> */}
       <Team />
-      <Customers />
+      {/* <Customers /> */}
       <Testimonials />
       <Blog />
       <Contact />
