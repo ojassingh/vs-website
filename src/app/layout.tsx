@@ -3,6 +3,8 @@ import { Geist } from "next/font/google";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-heading",
@@ -32,6 +34,8 @@ export default function RootLayout({
       >
         {children}
         <Toaster />
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
