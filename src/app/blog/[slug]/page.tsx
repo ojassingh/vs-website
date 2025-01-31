@@ -80,7 +80,7 @@ export default async function Page(props: {
           src={frontmatter.thumbnail}
           width={1000}
           height={1000}
-          className="h-[20rem] w-full rounded-lg object-cover shadow-md"
+          className="h-[20rem] w-full rounded-lg object-cover shadow-md object-center"
         />
       </article>
       <Post />
