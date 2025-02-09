@@ -68,7 +68,7 @@ export default async function Page(props: {
             src={frontmatter.headshot}
             width={40}
             height={40}
-            className="h-10 w-10 rounded-full object-cover"
+            className="h-10 w-10 rounded-full object-cover shadow-md"
           />
           <div className="grid gap-0">
             <p>{frontmatter.author}</p>
