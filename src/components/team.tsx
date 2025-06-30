@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
 import headshot from "@/../public/headshot.jpg";
-import sweta from "@/../public/sweta.jpeg";
 import Link from "next/link";
 import BlurFade from "./ui/blur-fade";
 
@@ -15,14 +14,14 @@ const Team: FC = () => {
       image: headshot,
       linkedin: "https://www.linkedin.com/in/vandanacs/",
     },
-    {
-      name: "Sweta Dutta",
-      role: "Partner and HR Specialist",
-      description:
-        "With 8+ years in HR, Sweta specializes in talent management, employee engagement, and strategic HR initiatives. She has been instrumental in building high-performance teams and fostering a culture of continuous improvement.",
-      image: sweta,
-      linkedin: "https://www.linkedin.com/in/sweta-dutta-47765a55/",
-    },
+    // {
+    //   name: "Sweta Dutta",
+    //   role: "Partner and HR Specialist",
+    //   description:
+    //     "With 8+ years in HR, Sweta specializes in talent management, employee engagement, and strategic HR initiatives. She has been instrumental in building high-performance teams and fostering a culture of continuous improvement.",
+    //   image: sweta,
+    //   linkedin: "https://www.linkedin.com/in/sweta-dutta-47765a55/",
+    // },
   ];
 
   return (
